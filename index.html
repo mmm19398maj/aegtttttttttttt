@@ -1,0 +1,131 @@
+
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="description" content="چرخ شانس TON - برنده جوایز کریپتو شوید! کیف پول TON خود را متصل کنید و شروع به برنده شدن USDT، TON و سایر پاداش‌های کریپتو کنید." />
+    <meta name="keywords" content="TON, blockchain, wheel of fortune, crypto, USDT, prizes, gambling, lottery" />
+    <meta property="og:title" content="چرخ شانس TON - برنده جوایز کریپتو شوید" />
+    <meta property="og:description" content="چرخ را بچرخانید و جوایز شگفت‌انگیز کریپتو را در بلاک‌چین TON برنده شوید!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-actual-domain.com/" />
+    <meta property="og:image" content="https://your-actual-domain.com/vite.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="چرخ شانس TON - برنده جوایز کریپتو شوید" />
+    <meta name="twitter:description" content="چرخ را بچرخانید و جوایز شگفت‌انگیز کریپتو را در بلاک‌چین TON برنده شوید!" />
+    <meta name="twitter:image" content="https://your-actual-domain.com/vite.svg" />
+    
+    <!-- Prevent zoom and scaling issues -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#1a1a2e">
+    
+    <!-- TON Connect Manifest -->
+    <link rel="manifest" href="/tonconnect-manifest.json" />
+    <meta name="ton-connect-manifest" content="/tonconnect-manifest.json" />
+    
+    <title>چرخ شانس TON - برنده جوایز کریپتو شوید</title>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- TON Connect SDK -->
+    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+    
+    <!-- GitHub Pages SPA redirect script -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    
+    <!-- Enhanced TON Connect Configuration -->
+    <script>
+      window.tonConnectConfig = {
+        manifestUrl: window.location.origin + '/tonconnect-manifest.json',
+        buttonRootId: 'ton-connect',
+        uiPreferences: {
+          theme: 'LIGHT',
+          borderRadius: 'm',
+          colorsSet: {
+            [window.THEME.LIGHT]: {
+              connectButton: {
+                background: '#0098EA',
+                foreground: '#FFFFFF'
+              },
+              accent: '#0098EA',
+              telegramButton: '#0088CC',
+              icon: {
+                primary: '#0F0F0F',
+                secondary: '#7A8999',
+                tertiary: '#C1CAD2',
+                success: '#29CC39'
+              },
+              constant: {
+                black: '#000000',
+                white: '#FFFFFF'
+              },
+              background: {
+                primary: '#FFFFFF',
+                secondary: '#F1F3F4',
+                segment: '#FFFFFF',
+                tint: '#F1F3F4',
+                qr: '#F1F3F4'
+              },
+              text: {
+                primary: '#0F0F0F',
+                secondary: '#6A7785'
+              }
+            }
+          }
+        },
+        actionsConfiguration: {
+          twaReturnUrl: 'https://t.me/your_bot_name',
+          skipRedirectToWallet: 'never'
+        },
+        enableAndroidBackHandler: true,
+        walletsListConfiguration: {
+          includeWallets: [
+            {
+              name: 'Tonkeeper',
+              aboutUrl: 'https://tonkeeper.com',
+              imageUrl: 'https://tonkeeper.com/assets/tonconnect-icon.png',
+              tondns: 'tonkeeper.ton',
+              platforms: ['ios', 'android', 'chrome', 'firefox']
+            },
+            {
+              name: 'OpenMask',
+              aboutUrl: 'https://www.openmask.app/',
+              imageUrl: 'https://www.openmask.app/img/logo.png',
+              platforms: ['chrome']
+            },
+            {
+              name: 'MyTonWallet',
+              aboutUrl: 'https://mytonwallet.io',
+              imageUrl: 'https://mytonwallet.io/icon-256.png',
+              platforms: ['chrome', 'ios', 'android']
+            }
+          ]
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
